@@ -26,4 +26,4 @@ EXPOSE 8070
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENTRYPOINT ["./node_modules/.bin/nodemon", "./node", "--port", "8070", "--nodeId", "1"]
+ENTRYPOINT ["./node_modules/.bin/nodemon", "./piped", "--port", "8070", "--nodeId", "1"]

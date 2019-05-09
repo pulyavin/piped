@@ -26,4 +26,4 @@ EXPOSE 8080
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENTRYPOINT ["./node_modules/.bin/nodemon", "./node", "--port", "8080", "--nodeId", "2"]
+ENTRYPOINT ["./node_modules/.bin/nodemon", "./piped", "--port", "8080", "--nodeId", "2"]
