@@ -1,0 +1,31 @@
+version: "2"
+
+services:
+  rabbitmq:
+    container_name: piped-rabbitmq
+    image: richbrains/rabbitmq-delayed-management
+    volumes:
+      - ./docker-files/rabbitmq/rabbitmq.config:/etc/rabbitmq/rabbitmq.config
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+  node-01:
+    build: ./docker-files/node-01
+    container_name: piped-node-01
+    depends_on:
+      - rabbitmq
+    volumes:
+      - .:/var/www
+    ports:
+      - 8070:8070
+
+  node-02:
+    build: ./docker-files/node-02
+    container_name: piped-node-02
+    depends_on:
+      - rabbitmq
+    volumes:
+      - .:/var/www
+    ports:
+      - 8080:8080
