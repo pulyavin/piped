@@ -65,7 +65,7 @@ server {
     include snippets/ssl.conf;
     include snippets/ssl-params.conf;
 
-    server_name api.you-project.com;
+    server_name api.your-project.com;
 
     location / {
         proxy_pass http://piped-nodes;
