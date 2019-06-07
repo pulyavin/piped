@@ -119,7 +119,6 @@ class rabbit {
   async sendMessage(message) {
     const channel = await this.connection.createChannel()
 
-    console.log(message)
     await channel.publish(
       `${process.env.RABBIT_PREFIX_EXCHANGE_OUT}${this.nodeId}`,
       '',
